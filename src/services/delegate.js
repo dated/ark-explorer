@@ -65,20 +65,28 @@ class DelegateService {
   }
 
   async active() {
-    const activeDelegates = store.getters['network/activeDelegates']
     const height = store.getters['network/height']
+    const activeDelegates = store.getters['network/activeDelegates']
 
-    const response = await ApiService.get('delegates', {
-      params: {
-        limit: activeDelegates
-      }
-    })
+    const requests = [
+      ApiService.get('delegates/active'),
+      ApiService.get('delegates/active', {
+        params: {
+          height: height - activeDelegates
+        }
+      })
+    ]
 
-    return response.data.map(delegate => {
+    const [current, previous] = await Promise.all(requests)
+
+    return current.data.map(delegate => {
       delegate.forgingStatus = ForgingService.status(
         delegate,
         height
       )
+
+      const previousRoundData = previous.find(el => el.username === delegate.username)
+      delegate.previousRank = previousRoundData ? previousRoundData.rank : -1
 
       return delegate
     })

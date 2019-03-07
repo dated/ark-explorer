@@ -16,6 +16,10 @@
         cell-class="p-3 pl-8 sm:pl-10 text-left border-none"
       >
         <template slot-scope="row">
+          <span v-if="row.previousRank === -1">*</span>
+          <span v-else-if="row.previousRank < row.rank">down</span>
+          <span v-else-if="row.previousRank > row.rank">up</span>
+          <span v-else>no change</span>
           {{ row.rank }}
         </template>
       </table-column>
