@@ -32,6 +32,7 @@
 
 <script type="text/ecmascript-6">
 import TransactionService from '@/services/transaction'
+import { sortByDesc } from '@arkecosystem/utils'
 
 export default {
   name: 'BlockTransactions',
@@ -79,7 +80,7 @@ export default {
 
       if (this.block.transactions) {
         const { data } = await TransactionService.byBlock(this.block.id)
-        this.transactions = data
+        this.transactions = sortByDesc(data, el => el.timestamp.unix)
       }
     },
 

@@ -67,6 +67,7 @@
 
 <script type="text/ecmascript-6">
 import TransactionService from '@/services/transaction'
+import { sortByDesc } from '@arkecosystem/utils'
 
 export default {
   name: 'WalletTransactions',
@@ -126,7 +127,7 @@ export default {
           this.wallet.address,
           this.page
         )
-        this.transactions = data
+        this.transactions = sortByDesc(data, el => el.timestamp.unix)
       }
     },
 

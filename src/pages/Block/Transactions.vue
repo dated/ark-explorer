@@ -24,6 +24,7 @@
 
 <script type="text/ecmascript-6">
 import TransactionService from '@/services/transaction'
+import { sortByDesc } from '@arkecosystem/utils'
 
 export default {
   data: () => ({
@@ -93,7 +94,7 @@ export default {
         return
       }
 
-      this.transactions = transactions
+      this.transactions = sortByDesc(transactions, el => el.timestamp.unix)
     },
 
     setMeta (meta) {

@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@arkecosystem/utils@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/utils/-/utils-0.3.0.tgz#f0d6040ab0134ee7db046ab8246cb17b2c5b9867"
+  integrity sha512-FNHihowzUItP8qQC8m8I2/XFogffjynbhIlQaAAvAQHep3QDfPL4Rr92iGdCDzpPpP166GlorkHD7344PfgxzA==
+  dependencies:
+    "@flatten/array" "^1.1.7"
+    dottie "^2.0.1"
+    fast-safe-stringify "^2.0.6"
+    fast-sort "^1.5.4"
+    fast.js "^0.1.1"
+    hyperid "^2.0.1"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
@@ -699,6 +711,11 @@
   dependencies:
     debug "^3.1.0"
     lodash.once "^4.1.1"
+
+"@flatten/array@^1.1.7":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@flatten/array/-/array-1.1.8.tgz#5cce316da119d7851ae51e08adb1af714b7f05b9"
+  integrity sha512-6zP/OIuGkE+p7jdS0VwyqHoCjK0cuCsO+StkBEV1eHQ40m/A6o2+NnRB6G9h+OnYV4C4o8mZakWY56QUrsM6fA==
 
 "@hapi/address@2.x.x":
   version "2.0.0"
@@ -3331,6 +3348,11 @@ dot-prop@^4.1.1:
   dependencies:
     is-obj "^1.0.0"
 
+dottie@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/dottie/-/dottie-2.0.1.tgz#697ad9d72004db7574d21f892466a3c285893659"
+  integrity sha512-ch5OQgvGDK2u8pSZeSYAQaV/lczImd7pMJ7BcEPXmnFVjy4yJIzP6CsODJUTH8mg1tyH1Z2abOiuJO3DjZ/GBw==
+
 duplexer@^0.1.1, duplexer@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
@@ -4045,6 +4067,21 @@ fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
+
+fast-safe-stringify@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.6.tgz#04b26106cc56681f51a044cfc0d76cf0008ac2c2"
+  integrity sha512-q8BZ89jjc+mz08rSxROs8VsrBBcn1SIw1kq9NjolL509tkABRk9io01RAjSaEv1Xb2uFLt8VtRiZbGp5H8iDtg==
+
+fast-sort@^1.5.4:
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/fast-sort/-/fast-sort-1.5.6.tgz#fe5dbe919f2f2333d1823808d6d1e7c3b8c562cc"
+  integrity sha512-/UihlqTK3c6uie43pn5+tciRncoUBgMFXcxrqqmeZrBTmTQM+TeZ4YW2sZlTyzMICg4skHBTbMlK3OvEIy11ew==
+
+fast.js@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/fast.js/-/fast.js-0.1.1.tgz#7c024d55ae144882fbcee44b79005fe2dcabd9fe"
+  integrity sha1-fAJNVa4USIL7zuRLeQBf4tyr2f4=
 
 fastq@^1.6.0:
   version "1.6.0"
@@ -4946,6 +4983,14 @@ husky@^3.0.1:
     read-pkg "^5.1.1"
     run-node "^1.0.0"
     slash "^3.0.0"
+
+hyperid@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/hyperid/-/hyperid-2.0.2.tgz#f56d898f810f0b737c81475803ea4b63515a92d5"
+  integrity sha512-D4krJfLyXZTZZibL5CEUJzyL001ah1TOK+5wlsra9eMnb0RtMZcBRkblxVRDwzB9VIm9PKXJ4zZtAisFCKuuKQ==
+  dependencies:
+    uuid "^3.3.2"
+    uuid-parse "^1.0.0"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
@@ -10041,6 +10086,11 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
+
+uuid-parse@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/uuid-parse/-/uuid-parse-1.1.0.tgz#7061c5a1384ae0e1f943c538094597e1b5f3a65b"
+  integrity sha512-OdmXxA8rDsQ7YpNVbKSJkNzTw2I+S5WsbMDnCtIWSQaosNAcWtFuI/YK1TjzUI6nbkgiqEyh8gWngfcv8Asd9A==
 
 uuid@^3.0.1, uuid@^3.3.2:
   version "3.3.2"

@@ -26,6 +26,7 @@
 
 <script type="text/ecmascript-6">
 import TransactionService from '@/services/transaction'
+import { sortByDesc } from '@arkecosystem/utils'
 
 export default {
   name: 'LatestTransactions',
@@ -76,7 +77,7 @@ export default {
 
     async getTransactions () {
       const { data } = await TransactionService.filterByType(1, this.transactionType)
-      this.transactions = data
+      this.transactions = sortByDesc(data, el => el.timestamp.unix)
     },
 
     onSortChange (params) {

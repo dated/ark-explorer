@@ -48,6 +48,7 @@
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
+    "@arkecosystem/utils": "^0.3.0",
     "@babel/core": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "^7.5.0",
