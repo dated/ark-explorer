@@ -229,3 +229,21 @@ export interface IVTooltip {
   delay?: any;
   classes?: string;
 }
+
+export interface Qrious {
+  new (options?: QRiousOptions): Qrious;
+  toDataURL(mime?: string): string;
+}
+
+type CorrectionLevel = "L" | "M" | "Q" | "H";
+
+export interface QRiousOptions {
+  background?: string;
+  backgroundAlpha?: number;
+  foreground?: string;
+  foregroundAlpha?: number;
+  level?: CorrectionLevel;
+  padding?: number;
+  size?: number;
+  value?: string;
+}

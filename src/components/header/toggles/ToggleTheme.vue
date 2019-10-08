@@ -9,42 +9,39 @@
   </button>
 </template>
 
-<script type="text/ecmascript-6">
-import { mapGetters } from 'vuex'
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import { mapGetters } from "vuex";
 
-export default {
-  name: 'ToggleTheme',
-
-  data: () => ({
-    imageSource: null
-  }),
-
+@Component({
   computed: {
-    ...mapGetters('ui', ['nightMode'])
+    ...mapGetters("ui", ["nightMode"]),
   },
+})
+export default class ToggleTheme extends Vue {
+  private nightMode: boolean;
+  private imageSource = null;
 
-  mounted () {
-    this.prepareComponent()
-  },
+  public mounted() {
+    this.prepareComponent();
+  }
 
-  methods: {
-    prepareComponent () {
-      this.setImageSource()
+  private prepareComponent() {
+    this.setImageSource();
 
-      this.$store.watch((state) => state.ui.nightMode, (value) => this.setImageSource())
-    },
+    this.$store.watch(state => state.ui.nightMode, value => this.setImageSource());
+  }
 
-    setImageSource () {
-      const name = this.nightMode ? 'sun' : 'moon'
+  private setImageSource() {
+    const name = this.nightMode ? "sun" : "moon";
 
-      this.imageSource = require(`@/assets/images/theme/${name}.svg`)
-    },
+    this.imageSource = require(`@/assets/images/theme/${name}.svg`);
+  }
 
-    changeImageSource () {
-      const name = this.nightMode ? 'sun' : 'moon'
+  private changeImageSource() {
+    const name = this.nightMode ? "sun" : "moon";
 
-      this.imageSource = require(`@/assets/images/theme/hover/${name}.svg`)
-    }
+    this.imageSource = require(`@/assets/images/theme/hover/${name}.svg`);
   }
 }
 </script>
